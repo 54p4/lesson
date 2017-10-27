@@ -1,0 +1,19 @@
+<form class="input-group">
+    <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1" (click)="delete()" >カタカナ・ひらがな</span>
+            <input type="text" class="form-control" placeholder="わたし" 
+            aria-describedby="basic-addon1" [(ngModel)]="word.word" name="word">
+
+            <span class="input-group-addon" id="basic-addon1">中文</span>
+            <input type="text" class="form-control" placeholder="我" 
+            aria-describedby="basic-addon1" [(ngModel)]="word.chinese" name="chinese">
+
+            <span class="input-group-addon" id="basic-addon1">English</span>
+            <input type="text" class="form-control" placeholder="i/me" 
+            aria-describedby="basic-addon1" [(ngModel)]="word.english" name="english">
+
+            <span class="input-group-addon" id="basic-addon1">例</span>
+            <input type="text" class="form-control lesson-wdeditor-title-eg" placeholder="私はがくせいです" name="example"
+            aria-describedby="basic-addon1" [(ngModel)]="word.example" #box (keyup.enter)="onEnter(box.value)">
+    </div> 
+</form>

@@ -1,0 +1,15 @@
+<div class="lesson-text">
+    <div class="lesson-title">
+        <input type="text" class="form-control" [(ngModel)]="title" placeholder="わたし">
+    </div>
+    <div class="lesson-content">
+        <textarea  class="lesson-txtarea form-control" 
+        contenteditable="true" autofocus="autofocus" [(ngModel)]="content" >
+            
+
+        </textarea>
+        <div Markdown class="lesson-mkdarea" [data]="content">
+         
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+.lessonEditor {
+	display: inline-block;
+	width: 100%;
+	height: 580px;
+	overflow-y: auto;
+	background-color: #FFF68F;
+}

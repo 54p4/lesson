@@ -1,0 +1,21 @@
+.lesson-word-title {
+    font-size: 19px;
+    width:100%;
+    display: inline-block;
+    
+    overflow-y: auto;
+}
+
+.lesson-word-title select {
+    width: 40%;
+    display: inline;
+}
+
+.lesson-word-title label {
+    display: inline;
+}
+.lesson-word {
+    max-height: 580px;
+    height: 580px;
+}
+

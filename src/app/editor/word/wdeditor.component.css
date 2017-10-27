@@ -1,0 +1,57 @@
+.lesson-wdeditor {
+    width: 100%;
+    height: 580px;
+    max-height: 580px;
+    overflow-y: auto;
+    padding-left: 7px;
+}
+
+.lesson-wdeditor-title-eg {
+    width: 450px;
+}
+
+.lesson-word-title {
+    font-size: 19px;
+    width:100%;
+    display: inline-block;
+    
+    overflow-y: auto;
+}
+
+.lesson-word-title select {
+    width: 40%;
+    display: inline;
+}
+
+.lesson-word-title label {
+    display: inline;
+}
+.lesson-word {
+    max-height: 580px;
+    height: 580px;
+}
+
+table {
+    border: solid;
+    border-style: 5px; 
+}
+
+.lesson-word-table th,td {
+   width: 256px;
+   text-align: center;
+   border: solid;
+   border-style: 5px;
+   font-size: 17px; 
+}
+
+.lesson-word-eg {
+    width: 600px;
+    text-align: center;
+    border: solid;
+    border-style: 5px;
+    font-size: 17px; 
+}
+
+form {
+    margin-bottom: 7px;
+}

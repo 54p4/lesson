@@ -1,0 +1,44 @@
+
+.lesson-title input {
+    text-align: center;
+    font-size: 17px;
+    height: 43px;
+}
+
+.lesson-text {
+    display: inline-block;
+    width:100%;
+}
+
+.lesson-content {
+    width:100%;
+    display: inline-block;
+    margin: 0px;
+}
+
+.lesson-txtarea {
+    width: 50%;
+    height: 537px;
+    max-height: 537px;
+    overflow-y: auto;
+    display: inline;
+    margin: 0px;
+    font-size: 19px;
+}
+
+textarea {
+    padding: 7px;
+    resize: none;
+    letter-spacing: normal;
+    outline: none;
+}
+
+.lesson-mkdarea {
+    width: 50%;
+    height: 537px;
+    max-height: 537px;
+    overflow-y: auto;
+    float: right;
+    display: inline;
+    padding-left: 7px;
+}
