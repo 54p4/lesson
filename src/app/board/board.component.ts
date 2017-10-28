@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Route } from '@angular/router';
 
 
 @Component({
@@ -7,14 +7,23 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent implements OnInit, OnDestroy {
 
-  lesson =" ";
+  lesson = ' ';
+  sub: any;
+  constructor(private route: ActivatedRoute) {
 
-  constructor(private route: ActivatedRoute) { }
-
-  ngOnInit() {
-    console.log(this.route.snapshot.params["id"]);
   }
 
+  ngOnInit() {
+    //this param must subscribe, perhaps, url changed but component did not change 
+    this.sub = this.route.params.subscribe(params => {
+      console.log(params['id']);
+    });
+  }
+
+  ngOnDestroy(): void {
+    //this unsubscribe is unnecessarily, ng will manage it
+    this.sub.unsubscribe();
+  }
 }

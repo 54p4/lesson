@@ -3,19 +3,11 @@
 
 	<div class="lesson-nav">
 		<ul class="nav nav-pills nav-stacked">
-			<li><a routerLink="/lesson/1234">第一课</a></li>
-			<li><a href="#">Profile</a></li>
-			<li><a href="#">Messages</a></li>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Profile</a></li>
-			<li><a href="#">Messages</a></li>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Profile</a></li>
-			<li><a href="#">Messages</a></li>
-			<li><a href="#">Home</a></li>
-	
+			<li *ngFor="let navi of navis ">
+					<a [routerLink]="['/lesson',navi.id]" >{{navi.title}}</a>
+			</li>
+			<li><a routerLink="/lesson/0000">00000</a></li>
 		</ul>
-
 	</div>
 
 	<div class="lesson-board">
