@@ -1,13 +1,13 @@
 <div class="lesson-wdeditor">
         <div class="lesson-wdeditor-title">
-                <h1> わたしじゃない</h1> 
+                <h1>{{word.title}}</h1> 
         </div>
        
         <form class="input-group">
                 <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">カタカナ・ひらがな</span>
                         <input type="text" class="form-control" placeholder="わたし" 
-                        aria-describedby="basic-addon1" [(ngModel)]="word.word" name="word">
+                        aria-describedby="basic-addon1" [(ngModel)]="word.japanese" name="word">
 
                         <span class="input-group-addon" id="basic-addon1">中文</span>
                         <input type="text" class="form-control" placeholder="我" 

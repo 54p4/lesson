@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Http } from '@angular/http';
+
 
 export class Words {
-    word: string;
-    chinese: string;
-    english: string;
-    example: string;
-  }
+  japanese: string;
+  chinese: string;
+  english: string;
+  example: string;
+  title: string;
+  lessonId: string;
+}
 
 
 @Component({
@@ -18,15 +22,15 @@ export class Words {
 
 export class WdEditorComponent implements OnInit {
 
-  title= 'わたし';
-  content= '# hello';
-  
-  word :Words =new Words();
-  
-  constructor(private route: ActivatedRoute) { }
+  word: Words = new Words();
+
+  constructor(private route: ActivatedRoute, private http: Http) { }
 
   ngOnInit() {
-    
+
   }
-  onEnter(value: string) { console.log(this.word) }
+  onEnter() {
+    this.http.post('/proxy/word/save', this.word).subscribe();
+    this.word = new Words();
+  }
 }

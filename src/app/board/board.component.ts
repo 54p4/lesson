@@ -22,6 +22,8 @@ export class BoardComponent implements OnInit, OnDestroy {
     });
   }
 
+
+
   ngOnDestroy(): void {
     //this unsubscribe is unnecessarily, ng will manage it
     this.sub.unsubscribe();
