@@ -1,0 +1,15 @@
+<div class='lesson-adder'>
+
+    <form class='form-inline'>
+        <div class='form-group'>
+            <label for='title'>标题</label>
+            <input type='text' class='form-control' name='title' id='title' placeholder='わたし' [(ngModel)]='lesson.title'>
+        </div>
+        <div class='form-group'>
+            <label for='type'>类型</label>
+            <input type='text' class='form-control' name='type' id='type' placeholder='N2' [(ngModel)]='lesson.type'>
+        </div>
+        <button type='submit' class='btn btn-success' (click)='onSubmit()'>添加</button>
+    </form>
+
+</div>

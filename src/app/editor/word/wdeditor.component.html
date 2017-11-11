@@ -1,6 +1,9 @@
 <div class="lesson-wdeditor">
         <div class="lesson-wdeditor-title">
-                <h1>{{word.title}}</h1> 
+                <input type="text" class="form-control" [(ngModel)]="word.title" placeholder="わたし" readonly="readonly">
+                <button class="btn btn-success">删除</button>
+                <button class="btn btn-success">提交</button>
+                <button class="btn btn-success" routerLink="/wdeditor">添加</button>
         </div>
        
         <form class="input-group">
@@ -19,7 +22,7 @@
 
                         <span class="input-group-addon" id="basic-addon1">例</span>
                         <input type="text" class="form-control lesson-wdeditor-title-eg" placeholder="私はがくせいです" name="example"
-                        aria-describedby="basic-addon1" [(ngModel)]="word.example" #box (keyup.enter)="onEnter(box.value)">
+                        aria-describedby="basic-addon1" [(ngModel)]="word.example" #box (keyup.enter)="onEnter()">
                 </div> 
         </form>
         <lesson-wdeditorbar></lesson-wdeditorbar>

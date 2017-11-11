@@ -1,31 +1,28 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Route } from '@angular/router';
-
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, } from '@angular/router';
+import { Lessons, LessonService } from '../service/lesson.service';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'lesson-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 })
-export class BoardComponent implements OnInit, OnDestroy {
+export class BoardComponent implements OnInit {
 
-  lesson = ' ';
+  lesson: Lessons = new Lessons('', '');
   sub: any;
-  constructor(private route: ActivatedRoute) {
+
+  constructor(private route: ActivatedRoute, private service: LessonService) {
 
   }
-
   ngOnInit() {
-    //this param must subscribe, perhaps, url changed but component did not change 
+    //  this param must subscribe, perhaps, url changed but component did not change
     this.sub = this.route.params.subscribe(params => {
-      console.log(params['id']);
+      const lessonid = params['id'];
+      this.service.getLessonByID(lessonid).subscribe(data => {
+        this.lesson = data;
+      });
     });
-  }
-
-
-
-  ngOnDestroy(): void {
-    //this unsubscribe is unnecessarily, ng will manage it
-    this.sub.unsubscribe();
   }
 }

@@ -10,22 +10,23 @@
     width: 450px;
 }
 
-.lesson-word-title {
-    font-size: 19px;
-    width:100%;
+
+.lesson-wdeditor-title input {
+    width: 50%;
+    display: inline;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.lesson-wdeditor-title button {
     display: inline-block;
-    
-    overflow-y: auto;
+    float: right;
+    margin-right: 50px;
+    width: 100px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
-.lesson-word-title select {
-    width: 40%;
-    display: inline;
-}
-
-.lesson-word-title label {
-    display: inline;
-}
 .lesson-word {
     max-height: 580px;
     height: 580px;

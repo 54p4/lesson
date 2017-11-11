@@ -1,8 +1,21 @@
+.lesson-title {
+    width: 100%;
+    display: inline-block;
+}
+
+.lesson-title button {
+    display: inline-block;
+    float: right;
+    margin-right: 50px;
+    width: 100px;
+}
 
 .lesson-title input {
     text-align: center;
     font-size: 17px;
-    height: 43px;
+    height: 40px;
+    width: 50%;
+    display: inline-block;
 }
 
 .lesson-text {

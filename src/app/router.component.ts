@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { BoardComponent } from './board/board.component';
-
 import { TxtEditorComponent } from './editor/txt/txteditor.component';
-
 import { WordComponet } from './word/word.component';
-
 import { NaviComponent } from './navi/navi.component';
-
 import { WdEditorComponent } from './editor/word/wdeditor.component';
-
+import { AdderComponent } from './editor/adder.component';
 const appRoutes: Routes = [
   {
     path: 'lesson',
@@ -24,17 +19,21 @@ const appRoutes: Routes = [
   },
   {
     path: 'txteditor',
-    component: TxtEditorComponent,
+    component: NaviComponent,
     children: [
       {
         path: ':id',
         component: TxtEditorComponent
+      },
+      {
+        path: '',
+        component: AdderComponent
       }
     ]
   },
   {
     path: 'word',
-    component: WordComponet,
+    component: NaviComponent,
     children: [
       {
         path: ':id',
@@ -43,12 +42,18 @@ const appRoutes: Routes = [
     ]
   },
   {
-    path: 'wdeditor/:id',
-    component: WdEditorComponent,
-  },
-  {
-    path: '',
-    component: WordComponet,
+    path: 'wdeditor',
+    component: NaviComponent,
+    children: [
+      {
+        path: ':id',
+        component: WdEditorComponent,
+      },
+      {
+        path: '',
+        component: AdderComponent
+      }
+    ]
   }
 ];
 

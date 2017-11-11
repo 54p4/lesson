@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { Http } from '@angular/http';
 import { Words } from './wdeditor.component';
 
 @Component({
@@ -14,16 +14,20 @@ export class WdEditorBarComponent implements OnInit {
 
     word: Words = new Words();
 
-    constructor(private route: ActivatedRoute) { }
+    constructor(private route: ActivatedRoute, private http: Http) { }
 
     ngOnInit() {
 
     }
-    onEnter(value: string) { console.log(this.word) }
-    delete(){
-        console.log("delete");
+    onEnter(value: string) {
+        this.http.post('/proxy/word/update', this.word).subscribe();
+        this.word = new Words();
+
+    }
+    delete() {
+        console.log('delete');
         console.log(this.word);
-        this.word= new Words();
-        console.log(this.word)
+        this.word = new Words();
+        console.log(this.word);
     }
 }

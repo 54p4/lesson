@@ -1,14 +1,17 @@
 <div class="lesson-text">
     <div class="lesson-title">
-        <input type="text" class="form-control" [(ngModel)]="title" placeholder="わたし">
+        <input type="text" class="form-control" [(ngModel)]="lesson.title" placeholder="わたし">
+        <button class="btn btn-success">删除</button>
+        <button class="btn btn-success" (click)="save()">提交</button>
+        <button class="btn btn-success" routerLink="/txteditor">添加</button>
     </div>
     <div class="lesson-content">
         <textarea  class="lesson-txtarea form-control" 
-        contenteditable="true" autofocus="autofocus" [(ngModel)]="content" >
+        contenteditable="true" autofocus="autofocus" [(ngModel)]="lesson.lesson" >
             
 
         </textarea>
-        <div Markdown class="lesson-mkdarea" [data]="content">
+        <div Markdown class="lesson-mkdarea" [data]="lesson.lesson">
          
         </div>
     </div>

@@ -2,8 +2,9 @@
     font-size: 19px;
     width:100%;
     display: inline-block;
-    
+    float: right;
     overflow-y: auto;
+    text-align: center;
 }
 
 .lesson-word-title select {

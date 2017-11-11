@@ -13,16 +13,20 @@ import { WdEditorComponent } from './editor/word/wdeditor.component';
 import { WordComponet } from './word/word.component';
 import { MheaderComponent } from './header/mheader.component';
 import { WdEditorBarComponent } from './editor/word/wdeditorbar.component';
+import { NavibarComponent } from './navi/navibar.component';
+import { AdderComponent } from './editor/adder.component';
+import { LessonService } from './service/lesson.service';
 
 @NgModule({
   declarations: [
     AppComponent, NaviComponent, BoardComponent, TxtEditorComponent,
-    WordComponet, MheaderComponent, WdEditorComponent, WdEditorBarComponent
+    WordComponet, MheaderComponent, WdEditorComponent, WdEditorBarComponent, NavibarComponent
+    , AdderComponent
   ],
   imports: [
     BrowserModule, LessonRoutingModule, MarkdownModule.forRoot(), FormsModule, ReactiveFormsModule
   ],
-  providers: [],
+  providers: [LessonService],
   bootstrap: [AppComponent, MheaderComponent]
 })
 export class AppModule { }

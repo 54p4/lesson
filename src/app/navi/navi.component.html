@@ -1,15 +1,6 @@
 <!-- left list navi-->
 <div class="lesson">
-
-	<div class="lesson-nav">
-		<ul class="nav nav-pills nav-stacked">
-			<li *ngFor="let navi of navis ">
-					<a [routerLink]="['/lesson',navi.id]" >{{navi.title}}</a>
-			</li>
-			<li><a routerLink="/lesson/0000">00000</a></li>
-		</ul>
-	</div>
-
+	<lesson-navibar ></lesson-navibar>
 	<div class="lesson-board">
 		<router-outlet></router-outlet>
 	</div>
