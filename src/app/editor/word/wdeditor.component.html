@@ -1,29 +1,33 @@
 <div class="lesson-wdeditor">
         <div class="lesson-wdeditor-title">
                 <input type="text" class="form-control" [(ngModel)]="word.title" placeholder="わたし" readonly="readonly">
-                <button class="btn btn-success">删除</button>
-                <button class="btn btn-success">提交</button>
-                <button class="btn btn-success" routerLink="/wdeditor">添加</button>
+                <button class="btn btn-success">删除全部</button>
+               
+                <button class="btn btn-success" routerLink="/wdeditor">添加课文</button>
         </div>
-       
+
         <form class="input-group">
                 <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">カタカナ・ひらがな</span>
-                        <input type="text" class="form-control" placeholder="わたし" 
-                        aria-describedby="basic-addon1" [(ngModel)]="word.japanese" name="word">
+                        <input type="text" class="form-control" placeholder="わたし" aria-describedby="basic-addon1" [(ngModel)]="word.japanese" name="word">
 
                         <span class="input-group-addon" id="basic-addon1">中文</span>
-                        <input type="text" class="form-control" placeholder="我" 
-                        aria-describedby="basic-addon1" [(ngModel)]="word.chinese" name="chinese">
+                        <input type="text" class="form-control" placeholder="我" aria-describedby="basic-addon1" [(ngModel)]="word.chinese" name="chinese">
 
                         <span class="input-group-addon" id="basic-addon1">English</span>
-                        <input type="text" class="form-control" placeholder="i/me" 
-                        aria-describedby="basic-addon1" [(ngModel)]="word.english" name="english">
+                        <input type="text" class="form-control" placeholder="i/me" aria-describedby="basic-addon1" [(ngModel)]="word.english" name="english">
 
                         <span class="input-group-addon" id="basic-addon1">例</span>
-                        <input type="text" class="form-control lesson-wdeditor-title-eg" placeholder="私はがくせいです" name="example"
-                        aria-describedby="basic-addon1" [(ngModel)]="word.example" #box (keyup.enter)="onEnter()">
-                </div> 
+                        <input type="text" class="form-control lesson-wdeditor-title-eg" placeholder="私はがくせいです" name="example" aria-describedby="basic-addon1"
+                                [(ngModel)]="word.example" #box (keyup.enter)="onEnter()">
+                        <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button" (click)="onEnter()">submit</button>
+                        </span>
+
+                </div>
         </form>
-        <lesson-wdeditorbar></lesson-wdeditorbar>
+        <div *ngFor="let word of wordList | object">
+                <lesson-wdeditorbar wordValue='{{word}}'></lesson-wdeditorbar>
+        </div>
+
 </div>

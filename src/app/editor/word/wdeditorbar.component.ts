@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Http } from '@angular/http';
-import { Words } from './wdeditor.component';
+import { Component, OnInit, Input } from '@angular/core';
+import { WordService, Words } from '../../service/word.service';
 
 @Component({
     selector: 'lesson-wdeditorbar',
@@ -12,22 +10,23 @@ import { Words } from './wdeditor.component';
 
 export class WdEditorBarComponent implements OnInit {
 
+
     word: Words = new Words();
 
-    constructor(private route: ActivatedRoute, private http: Http) { }
+    @Input() set wordValue(value: any) {
+        this.word = JSON.parse(value);
+    }
+
+
+    constructor(private service: WordService) { }
 
     ngOnInit() {
 
     }
     onEnter(value: string) {
-        this.http.post('/proxy/word/update', this.word).subscribe();
-        this.word = new Words();
-
+        this.service.updateWord(this.word).subscribe();
     }
     delete() {
-        console.log('delete');
-        console.log(this.word);
-        this.word = new Words();
-        console.log(this.word);
+        this.service.deleteWord(this.word.id).subscribe();
     }
 }
