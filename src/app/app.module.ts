@@ -15,7 +15,10 @@ import { NavibarComponent } from './navi/navibar.component';
 import { AdderComponent } from './editor/adder.component';
 import { LessonService } from './service/lesson.service';
 import { WordService } from './service/word.service';
+import { NaviService } from './service/navi.service';
+import { EmitService } from './service/emit.service';
 import { ObjectPipe } from './pipes/object.pipe';
+
 @NgModule({
   declarations: [
     AppComponent, NaviComponent, BoardComponent, TxtEditorComponent,
@@ -25,7 +28,7 @@ import { ObjectPipe } from './pipes/object.pipe';
   imports: [
     BrowserModule, LessonRoutingModule, MarkdownModule.forRoot(), FormsModule, ReactiveFormsModule
   ],
-  providers: [LessonService, WordService],
+  providers: [LessonService, WordService, NaviService, EmitService],
   bootstrap: [AppComponent, MheaderComponent]
 })
 export class AppModule { }

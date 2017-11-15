@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WordService, Words } from '../../service/word.service';
-import { Title } from '@angular/platform-browser/src/browser/title';
 
+import { EmitService } from '../../service/emit.service';
 
 
 @Component({
@@ -20,7 +20,7 @@ export class WdEditorComponent implements OnInit, OnDestroy {
 
   sub: any;
 
-  constructor(private route: ActivatedRoute, private service: WordService) { }
+  constructor(private route: ActivatedRoute, private service: WordService, private emitService: EmitService) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -33,13 +33,17 @@ export class WdEditorComponent implements OnInit, OnDestroy {
       });
       this.getWordsByID(lessonid);
     });
+    this.emitService.eventEmit.subscribe(data => {
+      if (data === 'worddelete') {
+        this.getWordsByID(this.lessonid);
+      }
+    });
   }
 
   getWordsByID(lessonid) {
     this.service.getWordsByID(lessonid).subscribe(data => {
       this.wordList = data;
       // console.log(this.words);
-      console.log('xx');
     });
   }
 
