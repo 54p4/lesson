@@ -3,6 +3,15 @@ import { ActivatedRoute } from '@angular/router';
 import { Navigation, NaviService } from '../service/navi.service';
 import { EmitService } from '../service/emit.service';
 
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+
+
+export interface NaviState {
+  navi: string;
+}
+
+
 @Component({
   selector: 'lesson-navibar',
   templateUrl: './navibar.component.html',
@@ -13,8 +22,10 @@ export class NavibarComponent implements OnInit {
   navis: Navigation[] = [];
   search = '';
   orgNavis: Navigation[] = [];
-  constructor(private service: NaviService, private router: ActivatedRoute, private emitService: EmitService) {
-
+  hello: Observable<string>;
+  constructor(private service: NaviService, private router: ActivatedRoute,
+    private emitService: EmitService, private store$: Store<NaviState>) {
+    this.hello = this.store$.select('navi');
   }
   ngOnInit() {
     this.getNavi();

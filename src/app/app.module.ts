@@ -18,7 +18,9 @@ import { WordService } from './service/word.service';
 import { NaviService } from './service/navi.service';
 import { EmitService } from './service/emit.service';
 import { ObjectPipe } from './pipes/object.pipe';
+import { StoreModule } from '@ngrx/store';
 
+import { naviReducer } from './redux/navi';
 @NgModule({
   declarations: [
     AppComponent, NaviComponent, BoardComponent, TxtEditorComponent,
@@ -26,7 +28,8 @@ import { ObjectPipe } from './pipes/object.pipe';
     , AdderComponent, ObjectPipe
   ],
   imports: [
-    BrowserModule, LessonRoutingModule, MarkdownModule.forRoot(), FormsModule, ReactiveFormsModule
+    BrowserModule, LessonRoutingModule, MarkdownModule.forRoot(), FormsModule, ReactiveFormsModule,
+    StoreModule.forRoot({ navi: naviReducer })
   ],
   providers: [LessonService, WordService, NaviService, EmitService],
   bootstrap: [AppComponent, MheaderComponent]

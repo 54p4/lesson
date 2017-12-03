@@ -3,7 +3,7 @@
     <input type="text" class="form-control search" #box (keyup.enter)="onEnter()" placeholder="Search" [(ngModel)]="search" name="search">
 
     <ul class="nav nav-pills nav-stacked">
-
+        <li><span>hello:{{hello | async }}</span></li>        
         <li *ngFor="let navi of navis  ">
             <a [routerLink]="[navi.lessonid]">{{navi.title}}</a>
         </li>
