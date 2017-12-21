@@ -1,7 +1,7 @@
 <div class="lesson-text">
     <div class="lesson-title">
         <input type="text" class="form-control" [(ngModel)]="lesson.title" placeholder="わたし">
-        <button class="btn btn-success">删除</button>
+        <button class="btn btn-success" (click)="delete()">删除</button>
         <button class="btn btn-success" (click)="save()">提交</button>
         <button class="btn btn-success" routerLink="/txteditor">添加</button>
     </div>

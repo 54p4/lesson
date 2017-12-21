@@ -24,6 +24,9 @@ export class TxtEditorComponent implements OnInit, OnDestroy {
   save() {
     this.service.updateLesson(this.lesson);
   }
+  delete() {
+    this.service.deleteLesson(this.lesson);
+  }
   ngOnDestroy(): void {
     // this unsubscribe is unnecessarily, ng will manage it
     this.sub.unsubscribe();

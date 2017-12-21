@@ -41,4 +41,7 @@ export class LessonService {
   updateLesson(lesson: Lessons) {
     this.http.post('/proxy/lesson/update', lesson).subscribe();
   }
+  deleteLesson(lesson: Lessons) {
+    this.http.post('/proxy/lesson/delete', lesson).subscribe();
+  }
 }
