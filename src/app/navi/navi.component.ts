@@ -10,7 +10,7 @@ import { EmitService } from '../service/emit.service';
 
 export class NaviComponent implements OnInit {
 
-  display = 'inline-block';
+
   widthStyle = {
     'width': '83%'
   };
@@ -22,12 +22,10 @@ export class NaviComponent implements OnInit {
     this.emitService.eventEmit.subscribe(data => {
 
       if (data === 'naviHidden') {
-        this.display = 'none';
         this.widthStyle = {
           'width': '100%'
         };
       } else if (data === 'naviShow') {
-        this.display = 'inline-block';
         this.widthStyle = {
           'width': '83%'
         };

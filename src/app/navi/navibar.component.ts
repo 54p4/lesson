@@ -14,7 +14,6 @@ export class NavibarComponent implements OnInit {
   search = '';
   orgNavis: Navigation[] = [];
 
-
   displayStyle = {
     'display': 'inline-block'
   };
@@ -33,6 +32,14 @@ export class NavibarComponent implements OnInit {
     this.emitService.eventEmit.subscribe(data => {
       if (data === 'adder') {
         this.getNavi();
+      } else if (data === 'naviHidden') {
+        this.displayStyle = {
+          'display': 'none'
+        };
+      } else if (data === 'naviShow') {
+        this.displayStyle = {
+          'display': 'inline-block'
+        };
       }
     });
   }
