@@ -1,4 +1,4 @@
-<div class="lesson-nav">
+<div class="lesson-nav" [ngStyle]="displayStyle">
 
     <input type="text" class="form-control search" #box (keyup.enter)="onEnter()" placeholder="Search" [(ngModel)]="search" name="search">
 

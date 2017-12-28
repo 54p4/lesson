@@ -6,7 +6,7 @@
 .lesson-title button {
     display: inline-block;
     float: right;
-    margin-right: 50px;
+    margin-right: 20px;
     width: 100px;
 }
 
@@ -20,7 +20,7 @@
 
 .lesson-text {
     display: inline-block;
-    width:100%;
+    width: 100%;;
 }
 
 .lesson-content {

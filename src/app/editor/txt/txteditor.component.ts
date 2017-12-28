@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Http } from '@angular/http';
 import { Lessons, LessonService } from '../../service/lesson.service';
+import { EmitService } from '../../service/emit.service';
+
 
 @Component({
   selector: 'lesson-txteditor',
@@ -11,7 +13,9 @@ import { Lessons, LessonService } from '../../service/lesson.service';
 export class TxtEditorComponent implements OnInit, OnDestroy {
   lesson: Lessons = new Lessons('わたし', '# hello');
   sub: any;
-  constructor(private route: ActivatedRoute, private service: LessonService) { }
+  constructor(private route: ActivatedRoute, private service: LessonService, private emitService: EmitService) { }
+
+  navishow = '全屏';
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -26,6 +30,16 @@ export class TxtEditorComponent implements OnInit, OnDestroy {
   }
   delete() {
     this.service.deleteLesson(this.lesson);
+  }
+  naviShow() {
+    if (this.navishow === '全屏') {
+      this.emitService.eventEmit.emit('naviHidden');
+      this.navishow = '导航';
+    } else {
+      this.navishow = '全屏';
+      this.emitService.eventEmit.emit('naviShow');
+
+    }
   }
   ngOnDestroy(): void {
     // this unsubscribe is unnecessarily, ng will manage it

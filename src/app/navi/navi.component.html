@@ -1,7 +1,7 @@
 <!-- left list navi-->
 <div class="lesson">
-	<lesson-navibar ></lesson-navibar>
-	<div class="lesson-board">
+	<lesson-navibar display='{{display}}' ></lesson-navibar>
+	<div class="lesson-board" [ngStyle]="widthStyle">
 		<router-outlet></router-outlet>
 	</div>
 

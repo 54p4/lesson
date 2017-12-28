@@ -1,8 +1,5 @@
 .lesson-nav {
-	display: inline-block;
 	width: 17%;
-
-	
 	position: absolute;
 }
 .lesson-nav ul {
@@ -10,7 +7,7 @@
 	height: 540px;
 	max-height: 540px;
 }
-li a {
+.lesson-nav li a {
 	width: 100%;
 	display: inline-block;
 	max-height: 40px;
@@ -19,7 +16,7 @@ li a {
 	font-size: 20px;
 }
 
-li {
+.lesson-nav li {
 	border-bottom:1px solid #ccc;
 	max-height: 40px;
 }

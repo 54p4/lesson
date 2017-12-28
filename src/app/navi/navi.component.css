@@ -4,18 +4,10 @@
 	width: 100%;
 }
 
-.lesson-nav {
-	display: inline-block;
-	width: 17%;
-	height: 580px;
-	overflow-y: auto;
-	position: absolute;
-}
-
 .lesson-board {
 	display: inline-block;
 	float: right;
-	width: 83%;
+	width: 100%;
 	
 }
 

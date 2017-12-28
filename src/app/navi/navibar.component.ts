@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Navigation, NaviService } from '../service/navi.service';
 import { EmitService } from '../service/emit.service';
@@ -13,6 +13,18 @@ export class NavibarComponent implements OnInit {
   navis: Navigation[] = [];
   search = '';
   orgNavis: Navigation[] = [];
+
+
+  displayStyle = {
+    'display': 'inline-block'
+  };
+
+  @Input() set display(value: any) {
+    this.displayStyle = {
+      'display': value
+    };
+  }
+
   constructor(private service: NaviService, private router: ActivatedRoute, private emitService: EmitService) {
 
   }
