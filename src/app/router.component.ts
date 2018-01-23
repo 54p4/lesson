@@ -6,7 +6,13 @@ import { WordComponet } from './word/word.component';
 import { NaviComponent } from './navi/navi.component';
 import { WdEditorComponent } from './editor/word/wdeditor.component';
 import { AdderComponent } from './editor/adder.component';
+import { HomeComponent } from './home/home.component';
+
 const appRoutes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+  },
   {
     path: 'lesson',
     component: NaviComponent,

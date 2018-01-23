@@ -1,0 +1,25 @@
+<div class="homediv" [ngStyle]="heightstyle">
+
+    <canvas #myCanvas>
+    </canvas>
+    <button (click)="show(1,40)">没表情</button>
+    <button (click)="show(164,40)">给笑脸</button>
+    <button (click)="show(329,40)">怒气脸</button>
+    <button (click)="show(492,40)">悲伤脸</button>
+    <button (click)="show(1,252)">哭泣脸</button>
+    <button (click)="show(164,252)">和善脸</button>
+    <button (click)="show(329,252)">捉姬脸</button>
+    <button (click)="show(492,252)">震惊脸</button>
+    <button (click)="show(1,468)">抖M脸</button>
+    <button (click)="show(164,468)">抖S脸</button>
+    <button (click)="show(329,469)">喜欢脸</button>
+    <button (click)="show(492,469)">嫌弃脸</button>
+    <div class='hometxt'>
+        <input #awstext  placeholder="hello girls and boys" (keyup.enter)="submit()" />
+
+     
+    </div>
+    <div style="display:none;">
+        <img id="source" src="/assets/image/asuna.jpg" #asuna (load)="show(1,40)">
+    </div>
+</div>

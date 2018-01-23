@@ -18,12 +18,13 @@ import { WordService } from './service/word.service';
 import { NaviService } from './service/navi.service';
 import { EmitService } from './service/emit.service';
 import { ObjectPipe } from './pipes/object.pipe';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent, NaviComponent, BoardComponent, TxtEditorComponent,
     WordComponet, MheaderComponent, WdEditorComponent, WdEditorBarComponent, NavibarComponent
-    , AdderComponent, ObjectPipe
+    , AdderComponent, ObjectPipe, HomeComponent
   ],
   imports: [
     BrowserModule, LessonRoutingModule, MarkdownModule.forRoot(), FormsModule, ReactiveFormsModule
