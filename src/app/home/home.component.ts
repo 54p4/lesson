@@ -38,13 +38,29 @@ export class HomeComponent implements AfterViewInit {
     showWarau() {
         this.show(164, 40);
     }
+    dialog() {
+        this.context.beginPath();
+        this.context.moveTo(300, 150);
+        this.context.arcTo(670, 150, 670, 200, 45);
+        this.context.lineWidth = 2;
+        this.context.strokeStyle = 'snow';
+        this.context.stroke();
+        this.context.beginPath();
+        this.context.moveTo(300, 240);
+        this.context.arcTo(670, 240, 670, 200, 45);
+        this.context.stroke();
+    }
     submit() {
         const txt = this.awstext.nativeElement.value;
         console.log(txt);
-        this.context.clearRect(300, 100, 300, 300);
-        this.context.font = 'bold 30px arial';
-        this.context.fillText(txt, 300, 200, 300);
-        this.context.strokeText(txt, 300, 300, 300);
+        this.context.clearRect(290, 140, 400, 120);
+        if (txt !== '') {
+            this.dialog();
+        }
+
+        this.context.font = 'bold 20px arial';
+        this.context.fillText(txt, 330, 200, 300);
+
 
     }
 }
