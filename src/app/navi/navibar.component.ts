@@ -13,7 +13,7 @@ export class NavibarComponent implements OnInit {
   navis: Navigation[] = [];
   search = '';
   orgNavis: Navigation[] = [];
-
+  indx = 0;
   displayStyle = {
     'display': 'inline-block'
   };
@@ -61,5 +61,9 @@ export class NavibarComponent implements OnInit {
     } else {
       this.navis = this.orgNavis;
     }
+  }
+  activeme(indx) {
+
+    this.indx = indx;
   }
 }

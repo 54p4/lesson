@@ -4,8 +4,8 @@
 
     <ul class="nav nav-pills nav-stacked">
 
-        <li *ngFor="let navi of navis  ">
-            <a [routerLink]="[navi.lessonid]">{{navi.title}}</a>
+        <li *ngFor="let navi of navis ;let i = index" >
+            <a [routerLink]="[navi.lessonid]" [ngClass]="{'active': indx==i}" (click)="activeme(i)"  >{{navi.title}} </a>
         </li>
     </ul>
 </div>

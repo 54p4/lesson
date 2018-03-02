@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ElementRef, HostListener } from '@angular/core';
 
 
 @Component({
@@ -16,11 +16,12 @@ export class HomeComponent implements AfterViewInit {
     @ViewChild('awstext')
     awstext: ElementRef;
     context;
+    canvas;
     ngAfterViewInit() {
-        const canvas = this.myCanvas.nativeElement;
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight - 200;
-        const context = canvas.getContext('2d');
+        this.canvas = this.myCanvas.nativeElement;
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight - 200;
+        const context = this.canvas.getContext('2d');
         this.context = context;
         this.heightstyle = {
             'height': window.innerHeight
@@ -60,7 +61,9 @@ export class HomeComponent implements AfterViewInit {
 
         this.context.font = 'bold 20px arial';
         this.context.fillText(txt, 330, 200, 300);
-
-
+    }
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+       this. canvas.height = window.innerHeight - 200;
     }
 }

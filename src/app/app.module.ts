@@ -19,12 +19,14 @@ import { NaviService } from './service/navi.service';
 import { EmitService } from './service/emit.service';
 import { ObjectPipe } from './pipes/object.pipe';
 import { HomeComponent } from './home/home.component';
+import { GameComponent } from './game/game.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent, NaviComponent, BoardComponent, TxtEditorComponent,
     WordComponet, MheaderComponent, WdEditorComponent, WdEditorBarComponent, NavibarComponent
-    , AdderComponent, ObjectPipe, HomeComponent
+    , AdderComponent, ObjectPipe, HomeComponent, GameComponent, LoginComponent
   ],
   imports: [
     BrowserModule, LessonRoutingModule, MarkdownModule.forRoot(), FormsModule, ReactiveFormsModule
