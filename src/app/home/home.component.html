@@ -1,17 +1,11 @@
 <div class="homediv">
 
     <div class="taste">
-        <div class="sweet">
-            <app-comment floatx='right'></app-comment>
-            <app-comment floatx='right'></app-comment>
-            <app-comment floatx='right'></app-comment>
-            <app-comment floatx='right'></app-comment>
-            <app-comment floatx='right'></app-comment>
-            <app-comment floatx='right'></app-comment>
-            <app-comment floatx='right'></app-comment>
-            <a width='300px'>还想查看更多</a>
-        </div>
-        <div class="salty">
+
+        <div class="saltysweet">
+            <app-comment></app-comment>
+            <app-comment></app-comment>
+            <app-comment></app-comment>
             <app-comment></app-comment>
             <app-comment></app-comment>
             <app-comment></app-comment>
@@ -24,20 +18,22 @@
     </div>
 
     <div class='hometxt'>
-        <div class="homeleft">
-            <button (keyup.enter)="submit()">
-                甜
-            </button>
-        </div>
-        <div class="homecenter" >
-            <input #awstext placeholder="← _ ← | → _ →" [ngStyle]="txtwidth" />
-        </div>
+        <div class="hometxtcnt">
 
-        <div class="homeright">
-            <button (keyup.enter)="submit()">
-                咸
-            </button>
         </div>
+        <div class="homecenter">
+            <div>
+                <button (keyup.enter)="submit()" class="homeleft">
+咸
+                </button>
+                <button (keyup.enter)="submit()" class="homeright">
+甜
+                </button>
+            </div>
 
+            <input placeholder="← _ ← | → _ →" [ngStyle]="txtwidth" 
+                   (keyup)='check()' name='hometext' [(ngModel)]="hometext"/>
+
+        </div>
     </div>
 </div>

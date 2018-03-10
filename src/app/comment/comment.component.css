@@ -2,18 +2,18 @@
 img {
     display: inline;
     width: 17%;
-    height: 64px;
+    height: 47px;
 }
 .cmmt {
     width:100%;
-    height: 64px;
+    height: 47px;
     display: inline;
     float: left;
 }
 .cmmtcc {
     float: left;
     width: 80%;
-    height: 64px;
+    height: 47px;
     display: inline;
 }
 .cmmtcc span{

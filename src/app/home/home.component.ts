@@ -1,5 +1,5 @@
 import { Component, ViewChild, AfterViewInit, ElementRef, HostListener } from '@angular/core';
-import { NgStyle } from '@angular/common';
+
 
 @Component({
     selector: 'lesson-home',
@@ -11,23 +11,20 @@ import { NgStyle } from '@angular/common';
 
 export class HomeComponent {
 
-    @ViewChild('awstext')
-    awstext: ElementRef;
 
-    txtwidth = {
-        'width': '80%'
-    };
-
+    hometext: String = '';
     submit() {
-        const txt = this.awstext.nativeElement.value;
-        console.log(txt);
+
+
+    }
+    check() {
+
+        if (this.hometext.length > 51) {
+            this.hometext = this.hometext.substring(0, 51);
+        }
     }
     @HostListener('window:resize', ['$event'])
     onResize(event) {
-        const scroll = window.innerWidth - document.body.scrollWidth;
-        const width = document.body.scrollWidth * 0.8 - scroll - 3;
-        this.txtwidth = {
-            'width': width + 'px'
-        };
+
     }
 }
