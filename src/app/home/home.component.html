@@ -1,30 +1,43 @@
-<div class="homediv" [ngStyle]="heightstyle">
+<div class="homediv">
 
-    <canvas #myCanvas>
-        im sorry , your browser does not support canvas
-    </canvas>
+    <div class="taste">
+        <div class="sweet">
+            <app-comment floatx='right'></app-comment>
+            <app-comment floatx='right'></app-comment>
+            <app-comment floatx='right'></app-comment>
+            <app-comment floatx='right'></app-comment>
+            <app-comment floatx='right'></app-comment>
+            <app-comment floatx='right'></app-comment>
+            <app-comment floatx='right'></app-comment>
+            <a width='300px'>还想查看更多</a>
+        </div>
+        <div class="salty">
+            <app-comment></app-comment>
+            <app-comment></app-comment>
+            <app-comment></app-comment>
+            <app-comment></app-comment>
+            <app-comment></app-comment>
+            <app-comment></app-comment>
+            <app-comment></app-comment>
+            <a width='300px'>还想查看更多</a>
+        </div>
+    </div>
 
     <div class='hometxt'>
-        <div>
-            <button (click)="show(1,40)">没表情</button>
-            <button (click)="show(164,40)">给笑脸</button>
-            <button (click)="show(329,40)">怒气脸</button>
-            <button (click)="show(492,40)">悲伤脸</button>
-            <button (click)="show(1,252)">哭泣脸</button>
-            <button (click)="show(164,252)">和善脸</button>
-            <button (click)="show(329,252)">捉姬脸</button>
-            <button (click)="show(492,252)">震惊脸</button>
-            <button (click)="show(1,468)">抖M脸</button>
-            <button (click)="show(164,468)">抖S脸</button>
-            <button (click)="show(329,469)">喜欢脸</button>
-            <button (click)="show(492,469)">嫌弃脸</button>
+        <div class="homeleft">
+            <button (keyup.enter)="submit()">
+                甜
+            </button>
         </div>
-        <div>
-            <input #awstext placeholder="操さん、なにかいえよう" (keyup.enter)="submit()" />
+        <div class="homecenter" >
+            <input #awstext placeholder="← _ ← | → _ →" [ngStyle]="txtwidth" />
         </div>
 
-    </div>
-    <div style="display:none;">
-        <img id="source" src="/assets/image/asuna.jpg" #asuna (load)="show(1,40)">
+        <div class="homeright">
+            <button (keyup.enter)="submit()">
+                咸
+            </button>
+        </div>
+
     </div>
 </div>

@@ -8,10 +8,15 @@ import { WdEditorComponent } from './editor/word/wdeditor.component';
 import { AdderComponent } from './editor/adder.component';
 import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
+import { CommentComponent } from './comment/comment.component';
 const appRoutes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+  {
+    path: 'cmmt',
+    component: CommentComponent,
   },
   {
     path: 'game',

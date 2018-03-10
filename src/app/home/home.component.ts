@@ -1,5 +1,5 @@
 import { Component, ViewChild, AfterViewInit, ElementRef, HostListener } from '@angular/core';
-
+import { NgStyle } from '@angular/common';
 
 @Component({
     selector: 'lesson-home',
@@ -9,61 +9,25 @@ import { Component, ViewChild, AfterViewInit, ElementRef, HostListener } from '@
 
 
 
-export class HomeComponent implements AfterViewInit {
-    @ViewChild('myCanvas') myCanvas: ElementRef;
-    @ViewChild('asuna') asunaimg: ElementRef;
-    heightstyle = {};
+export class HomeComponent {
+
     @ViewChild('awstext')
     awstext: ElementRef;
-    context;
-    canvas;
-    ngAfterViewInit() {
-        this.canvas = this.myCanvas.nativeElement;
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight - 200;
-        const context = this.canvas.getContext('2d');
-        this.context = context;
-        this.heightstyle = {
-            'height': window.innerHeight
-        };
-    }
-    show(x, y) {
-        const img = this.asunaimg.nativeElement;
-        this.context.clearRect(0, 0, 300, 300);
-        this.context.drawImage(img, x, y, 160, 180, 100, 100, 160, 180);
-    }
 
-    showWu() {
-        this.show(1, 40);
-    }
-    showWarau() {
-        this.show(164, 40);
-    }
-    dialog() {
-        this.context.beginPath();
-        this.context.moveTo(300, 150);
-        this.context.arcTo(670, 150, 670, 200, 45);
-        this.context.lineWidth = 2;
-        this.context.strokeStyle = 'snow';
-        this.context.stroke();
-        this.context.beginPath();
-        this.context.moveTo(300, 240);
-        this.context.arcTo(670, 240, 670, 200, 45);
-        this.context.stroke();
-    }
+    txtwidth = {
+        'width': '80%'
+    };
+
     submit() {
         const txt = this.awstext.nativeElement.value;
         console.log(txt);
-        this.context.clearRect(290, 140, 400, 120);
-        if (txt !== '') {
-            this.dialog();
-        }
-
-        this.context.font = 'bold 20px arial';
-        this.context.fillText(txt, 330, 200, 300);
     }
     @HostListener('window:resize', ['$event'])
     onResize(event) {
-       this. canvas.height = window.innerHeight - 200;
+        const scroll = window.innerWidth - document.body.scrollWidth;
+        const width = document.body.scrollWidth * 0.8 - scroll - 3;
+        this.txtwidth = {
+            'width': width + 'px'
+        };
     }
 }

@@ -1,0 +1,34 @@
+
+img {
+    display: inline;
+    width: 17%;
+    height: 64px;
+}
+.cmmt {
+    width:100%;
+    height: 64px;
+    display: inline;
+    float: left;
+}
+.cmmtcc {
+    float: left;
+    width: 80%;
+    height: 64px;
+    display: inline;
+}
+.cmmtcc span{
+    font-size: 20px;
+    margin-left: 3px;
+    display: block;
+    width: 100%;
+    max-width:  100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cmmtccnm {
+    font-size: 7px;
+}
+.cmmtcctxt {
+    font-size: 13px;
+}
